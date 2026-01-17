@@ -1,2 +1,61 @@
-# CAT-FISCH-CHOCOLATE
-Помоги котику выбрать:шоколад или рыбка?
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра про котика</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #ff4500;
+        }
+        .food-button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .food-button:hover {
+            transform: scale(1.1);
+        }
+        #message {
+            font-size: 20px;
+            margin-top: 20px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Кормим котика!</h1>
+    <p>Выбирай еду для котика: он любит колбаску и рыбку, но не любит яблоко и шоколад.</p>
+
+    <button class="food-button" onclick="checkFood('Колбаска')">Колбаска</button>
+    <button class="food-button" onclick="checkFood('Рыбка')">Рыбка</button>
+    <button class="food-button" onclick="checkFood('Яблоко')">Яблоко</button>
+    <button class="food-button" onclick="checkFood('Шоколад')">Шоколад</button>
+
+    <div id="message"></div>
+
+    <script>
+        function checkFood(food) {
+            const goodFood = ['Колбаска', 'Рыбка'];
+            const badFood = ['Яблоко', 'Шоколад'];
+            const messageDiv = document.getElementById('message');
+
+            if (goodFood.includes(food)) {
+                messageDiv.textContent = "Котик рад! 👍";
+                messageDiv.style.color = 'green';
+            } else if (badFood.includes(food)) {
+                messageDiv.textContent = "Котик не хочет это есть! ❌";
+                messageDiv.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
